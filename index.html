@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+
+  <script>
+        function hover(element) {
+          /* if (element.className =="img-fluid button"){
+            element.setAttribute('src', "img/button_yellow.png");
+        }
+            */
+        }
+        function unhover(element) {
+         /*  if (element.className =="img-fluid button"){
+            element.setAttribute('src', "img/button.png"); 
+        } */
+         }
+
+      </script>
+
+ 
+  </head>
+
+  <body class="body"> 
+    <script>   
+      window.onload = function(){
+        if(document.getElementsByClassName("red").length == 1 ){
+          var activeButton = document.getElementsByClassName("red");
+          activeButton[0].setAttribute('src', "img/button_red.png");          
+        }
+        var length = setTimeout(function(){
+          loadXMLforLenghth();
+          }, 1);
+      
+        console.log("Hi, today we have " + length + " Macros :)");
+        var elements = document.getElementsByClassName("button");
+        for(var i =0; i<length; i++){
+          elements[i].setAttribute('src', "img/button_yellow.png");
+        }
+
+      }
+        function onClick(element){
+          if(document.getElementsByClassName("red").length == 1 ){
+            var activeButton = document.getElementsByClassName("red");
+            activeButton[0].setAttribute('src', "img/button_yellow.png");
+            activeButton[0].className = activeButton[0].className.replace(" red", "");
+          }
+          element.className += " red";
+          element.setAttribute('src', "img/button_red.png");
+          var macroIndex = element.attributes[3].nodeValue;
+          testLoadXML(macroIndex);
+        }
+      
+
+    </script>
+    <!-- Page Content -->
+    <div class="sitetop">
+      <div class="container-fluid menue">
+          <button>New Show</button>
+          <button>Save Show</button>
+          <button>Load Show</button>
+          <button class="listPresets">List Presets</button>
+      </div>
+      <h1 class="text-center title">fastMacro</h1>
+
+    </div>
+
+      
+    <div id="buttoncontainer" class="row">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="0" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="1" class="img-fluid button" src="img/button.png">       
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="2" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="3" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="4" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="5" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="6" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="7" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="8" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="9" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="10" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="11" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="12" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="13" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="14" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="15" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="16" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="17" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="18" class="img-fluid button" src="img/button.png">
+      <img onmouseover="hover(this)" onmouseout="unhover(this)" onclick=onClick(this) index="19" class="img-fluid button" src="img/button.png">
+    </div>
+    <div class="text-center">
+        <h2 id="activeMacroIndex">Index</h2>
+        <h2 id="activeMacroTitel">Titel</h2>
+        <h2 id="activeMacroDescription">Description</h2>
+      </div>
+  
+    <script>
+        //load xml initally to see how much macros exist
+        function loadXMLforLenghth() {
+          var xmlhttp;
+          if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+          } else {
+            // code for older browsers
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+             return this.responseXML.getElementsByTagName("Macro").length;
+            }
+          };
+          xmlhttp.open("GET", "xml/test.xml", true);
+          xmlhttp.send();
+        }
+
+
+
+        function testLoadXML(macroIndex) {
+          var xmlhttp;
+          if (window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+          } else {
+            // code for older browsers
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+             testFunction(this, macroIndex);
+            }
+          };
+          xmlhttp.open("GET", "xml/test.xml", true);
+          xmlhttp.send();
+        }
+       
+
+        function testFunction(xml, macroIndex){
+          var x, xmlDoc; 
+          xmlDoc = xml.responseXML;
+          x = xmlDoc.getElementsByTagName("Macro");
+          var index = x[macroIndex].attributes[0].nodeValue;
+          var name = x[macroIndex].attributes[1].nodeValue;
+          var description = x[macroIndex].attributes[2].nodeValue; 
+          var steps = x[macroIndex].childNodes;
+          var stepArray = wrapSteps(steps);
+
+          document.getElementById("activeMacroIndex").innerHTML = index;
+          document.getElementById("activeMacroTitel").innerHTML = name;
+          document.getElementById("activeMacroDescription").innerHTML = description;
+
+
+          document.getElementById("step1").innerHTML = stepArray[0].attributes[0].nodeValue;
+          document.getElementById("step2").innerHTML = stepArray[1].attributes[0].nodeValue;
+          document.getElementById("step3").innerHTML = stepArray[2].attributes[0].nodeValue;
+          document.getElementById("step4").innerHTML = stepArray[3].attributes[0].nodeValue;
+        } 
+
+        //Delete every second entry because its just the unavailable name
+        //Returns "Clean" array containing all steps
+        function wrapSteps(steps){        
+          var length = steps.length;
+          var stepArray = [];
+          for(var i=1; i<length; i++){
+            stepArray.push(steps[i]);
+            i++;
+          }
+          return stepArray;
+        }
+        </script>
+
+    <div class="row steps">
+      <div class="col-3 text-center">
+          <p id="step1">1</p>
+      </div>
+      <div class="col-3 text-center">
+          <p id="step2">2</p>
+      </div>  
+      <div class="col-3 text-center">
+          <p id="step3">3</p>
+      </div>  
+      <div class="col-3 text-center">
+          <p id="step4">4</p>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

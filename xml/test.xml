@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-9"?>
+<Profile majorVersion="1" minorVersion="4" product="ATEM 1 M/E Production Switcher">
+    <MixEffectBlocks/>
+    <DownstreamKeys/>
+    <ColorGenerators/>
+    <MediaPlayers/>
+    <MacroPool>
+        <Macro index="0" name="Pic n Pic LEFT" description="Picture in Picture on Left Side">
+            <Op id="PreviewInput" mixEffectBlockIndex="0" input="Camera5"/>
+            <Op id="TransitionSource" mixEffectBlockIndex="0" source="Background, Key1"/>
+            <Op id="KeyType" mixEffectBlockIndex="0" type="DVE"/>
+            <Op id="KeyFillInpute" mixEffectBlockIndex="0" keyIndex="0" input="Camera1"/>
+        </Macro>    
+        <Macro index="1" name="Pic n Pic RIGHT" description="Picture in Picture on Right Side">
+            <Op id="TransitionSource" mixEffectBlockIndex="0" source="Background, Key1"/>
+            <Op id="PreviewInput" mixEffectBlockIndex="0" input="Camera5"/>
+            <Op id="KeyFillInpute" mixEffectBlockIndex="0" keyIndex="0" input="Camera1"/>
+            <Op id="KeyType" mixEffectBlockIndex="0" type="DVE"/>            
+        </Macro>
+    </MacroPool>
+    <MacroContorl loop="False"/>
+</Profile>
