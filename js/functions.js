@@ -6,15 +6,8 @@ window.onload = function () {
         var activeButton = document.getElementsByClassName("red");
         activeButton[0].setAttribute('src', "img/button_red.png");
     }
-    var length = setTimeout(function () {
-        loadXMLforLenghth("K5_Macros_V2.xml");
-    }, 10);
+    setTimeout(loadXMLforLenghth("K5_Macros_V2.xml"), 100);
 
-    console.log("Hi, today we have " + length + " Macros :)");
-    var elements = document.getElementsByClassName("button");
-    for (var i = 0; i < length; i++) {
-        elements[i].setAttribute('src', "img/button_yellow.png");
-    }
 
 }
 
@@ -29,7 +22,12 @@ function loadXMLforLenghth(xmlFile) {
     }
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            return this.responseXML.getElementsByTagName("Macro").length;
+            var length = this.responseXML.getElementsByTagName("Macro").length;
+            console.log("Hi, today we have " + length + " Macros :)");
+            var elements = document.getElementsByClassName("button");
+            for (var i = 0; i < length; i++) {
+                elements[i].setAttribute('src', "img/button_yellow.png");
+            }
         }
     };
 
@@ -75,13 +73,13 @@ function testFunction(xml, macroIndex) {
     var stepString = "";
     for (var i = 0; i <= stepArray.length; i++) {
         if (stepArray[i] !== undefined) {
-            stepString += '<p id="step" onclick="openDetail('+ i + ')">' + stepArray[i].title + '</p>\n';
+            stepString += '<p id="step" onclick="openDetail(' + i + ')">' + stepArray[i].title + '</p>\n';
         }
     }
     document.getElementById("steps").innerHTML = stepString;
 }
 
-function openDetail(stepArrayIndex){
+function openDetail(stepArrayIndex) {
     document.getElementById("detail").innerHTML = wrapDetail(stepArray[stepArrayIndex]);
 
 }
@@ -96,4 +94,8 @@ function onClick(element) {
     element.setAttribute('src', "img/button_red.png");
     var macroIndex = element.attributes[3].nodeValue;
     testLoadXML(macroIndex, "K5_Macros_V2.xml");
+}
+
+function loadShow(){
+    console.log('test');
 }
