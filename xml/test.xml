@@ -9,12 +9,12 @@
             <Op id="PreviewInput" mixEffectBlockIndex="0" input="Camera5"/>
             <Op id="TransitionSource" mixEffectBlockIndex="0" source="Background, Key1"/>
             <Op id="KeyType" mixEffectBlockIndex="0" type="DVE"/>
-            <Op id="KeyFillInpute" mixEffectBlockIndex="0" keyIndex="0" input="Camera1"/>
+            <Op id="KeyFillInput" mixEffectBlockIndex="0" keyIndex="0" input="Camera1"/>
         </Macro>    
         <Macro index="1" name="Pic n Pic RIGHT" description="Picture in Picture on Right Side">
             <Op id="TransitionSource" mixEffectBlockIndex="0" source="Background, Key1"/>
             <Op id="PreviewInput" mixEffectBlockIndex="0" input="Camera5"/>
-            <Op id="KeyFillInpute" mixEffectBlockIndex="0" keyIndex="0" input="Camera1"/>
+            <Op id="KeyFillInput" mixEffectBlockIndex="0" keyIndex="0" input="Camera1"/>
             <Op id="KeyType" mixEffectBlockIndex="0" type="DVE"/>            
         </Macro>
     </MacroPool>

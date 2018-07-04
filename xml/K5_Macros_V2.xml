@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile majorVersion="1" minorVersion="4" product="ATEM 2 M/E Production Studio 4K">
+    <MixEffectBlocks/>
+    <DownstreamKeys/>
+    <ColorGenerators/>
+    <MediaPlayers/>
+    <MacroPool>
+        <Macro index="0" name="LT ME1+2" description="">
+            <Op id="TransitionSource" mixEffectBlockIndex="1" source="Key1"/>
+            <Op id="AutoTransition" mixEffectBlockIndex="1"/>
+            <Op id="DownstreamKeyAuto" keyIndex="0"/>
+            <Op id="MacroUserWait"/>
+            <Op id="DownstreamKeyAuto" keyIndex="0"/>
+            <Op id="AutoTransition" mixEffectBlockIndex="1"/>
+            <Op id="MacroSleep" frames="25"/>
+            <Op id="TransitionSource" mixEffectBlockIndex="1" source="Background"/>
+        </Macro>
+        <Macro index="1" name="LT ME2" description="">
+            <Op id="TransitionSource" mixEffectBlockIndex="1" source="Key1"/>
+            <Op id="AutoTransition" mixEffectBlockIndex="1"/>
+            <Op id="MacroUserWait"/>
+            <Op id="AutoTransition" mixEffectBlockIndex="1"/>
+            <Op id="MacroSleep" frames="25"/>
+            <Op id="TransitionSource" mixEffectBlockIndex="1" source="Background"/>
+        </Macro>
+        <Macro index="2" name="Lyrics IN" description="">
+            <Op id="DownstreamKeyAuto" keyIndex="1"/>
+            <Op id="PreviewInput" mixEffectBlockIndex="1" input="Camera7"/>
+            <Op id="TransitionSource" mixEffectBlockIndex="1" source="Background, Key2"/>
+            <Op id="AutoTransition" mixEffectBlockIndex="1"/>
+            <Op id="AuxiliaryInput" auxiliaryIndex="2" input="Camera8"/>
+        </Macro>
+        <Macro index="3" name="Lrics OUT" description="">
+            <Op id="DownstreamKeyAuto" keyIndex="1"/>
+            <Op id="AutoTransition" mixEffectBlockIndex="1"/>
+            <Op id="DVEAndFlyKeyXSize" mixEffectBlockIndex="1" keyIndex="1" xSize="1"/>
+            <Op id="DVEAndFlyKeyYSize" mixEffectBlockIndex="1" keyIndex="1" ySize="1"/>
+            <Op id="MacroSleep" frames="25"/>
+            <Op id="TransitionSource" mixEffectBlockIndex="1" source="Background"/>
+        </Macro>
+        <Macro index="4" name="DSM GFX" description="">
+            <Op id="SuperSourceArtAbove" artAbove="False"/>
+            <Op id="SuperSourceArtFillInput" input="Camera5"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="0" enable="False"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="1" enable="True"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="2" enable="False"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="3" enable="False"/>
+            <Op id="SuperSourceBoxInput" boxIndex="1" input="Camera10"/>
+            <Op id="AuxiliaryInput" auxiliaryIndex="2" input="SuperSource"/>
+        </Macro>
+        <Macro index="5" name="DSM Lyrics" description="">
+            <Op id="SuperSourceArtAbove" artAbove="False"/>
+            <Op id="SuperSourceArtFillInput" input="Camera8"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="0" enable="False"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="1" enable="True"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="2" enable="False"/>
+            <Op id="SuperSourceBoxEnable" boxIndex="3" enable="False"/>
+            <Op id="SuperSourceBoxInput" boxIndex="1" input="Camera10"/>
+            <Op id="AuxiliaryInput" auxiliaryIndex="2" input="SuperSource"/>
+        </Macro>
+        <Macro index="6" name="Telefon LT" description="">
+			<Op id="MediaPlayerSourceStillIndex" mediaPlayer="0" index="5"/>
+        </Macro>
+        <Macro index="7" name="Twitter LT" description="">
+			<Op id="MediaPlayerSourceStillIndex" mediaPlayer="0" index="6"/>
+        </Macro>
+    </MacroPool>
+    <MacroControl loop="False"/>
+</Profile>

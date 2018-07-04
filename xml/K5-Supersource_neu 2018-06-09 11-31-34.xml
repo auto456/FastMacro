@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile majorVersion="1" minorVersion="4" product="ATEM 2 M/E Production Studio 4K">
+    <MixEffectBlocks/>
+    <DownstreamKeys/>
+    <ColorGenerators/>
+    <MediaPlayers/>
+    <SuperSource artFillInput="5" artKeyInput="3011" artOption="Background" artPreMultiplied="False" artClip="50" artGain="70" artInvertKey="False" borderEnabled="False" borderBevel="InOut" borderHue="0" borderSaturation="0" borderLuma="100" borderWidthOut="0.5" borderWidthIn="0.5" borderSoftnessOut="0" borderSoftnessIn="0" borderBevelPosition="0.5" borderBevelSoftness="0" borderLightSourceDirection="36" borderLightSourceAltitude="25">
+        <Boxes>
+            <Box index="0" enabled="False" inputSource="10" xPosition="-8" yPosition="4.5" size="0.5" cropped="False" cropTop="0" cropBottom="0" cropLeft="0" cropRight="0"/>
+            <Box index="1" enabled="True" inputSource="10" xPosition="8" yPosition="4.5" size="0.5" cropped="False" cropTop="0" cropBottom="0" cropLeft="0" cropRight="0"/>
+            <Box index="2" enabled="False" inputSource="0" xPosition="-8" yPosition="-4.5" size="0.5" cropped="False" cropTop="0" cropBottom="0" cropLeft="0" cropRight="0"/>
+            <Box index="3" enabled="False" inputSource="0" xPosition="8" yPosition="-4.5" size="0.5" cropped="False" cropTop="0" cropBottom="0" cropLeft="0" cropRight="0"/>
+        </Boxes>
+    </SuperSource>
+</Profile>

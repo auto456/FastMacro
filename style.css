@@ -1,40 +1,54 @@
-.body{
+.body {
     background-color: #56565652;
 }
-.title{
+
+.title {
     color: #ffffff;
     margin: 40px;
     font-weight: 200;
     font-size: 88px;
     margin-bottom: 70px;
 }
-.row{
-    margin:25px;
+
+.row {
+    margin: 25px;
 }
 
-.menue{
+.menue {
     margin-top: 20px;
     margin-left: 20px;
 }
 
-.listPresets{
-  margin-left: 10%;
+.listPresets {
+    margin-left: 10%;
 }
 
-.button{
-    width:5%;
+.button {
+    width: 5%;
     height: 5%;
 }
 
-.button :active{
+.button :active {
     background-image: "img/button_red.png";
 }
 
-.button :hvoer{
+.button :hvoer {
     background-image: "img/button_red.png";
 }
 
-.steps{
-    margin-top: 10%;
+#steps {
+    margin-top: 0;
+    margin-bottom: 0rem;
+    margin-left: 30px;
+    padding: 10px 0px 0px 40px;
+    width: 35vw;
+    border-style: dashed;
+    font-size: 30pt;
+}
+
+#detail {
+    border-style: dashed;
+    margin-left: 2vw;
+    width: 56vw;
     font-size: 30pt;
 }
