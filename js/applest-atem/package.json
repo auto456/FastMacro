@@ -1,0 +1,70 @@
+{
+  "_from": "applest-atem",
+  "_id": "applest-atem@0.2.4",
+  "_inBundle": false,
+  "_integrity": "sha1-wBydoh/hf13Lm15ICaytzoMV6OY=",
+  "_location": "/applest-atem",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "applest-atem",
+    "name": "applest-atem",
+    "escapedName": "applest-atem",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/applest-atem/-/applest-atem-0.2.4.tgz",
+  "_shasum": "c01c9da21fe17f5dcb9b5e4809acadce8315e8e6",
+  "_spec": "applest-atem",
+  "_where": "C:\\Projekte\\test",
+  "author": {
+    "name": "miyukki",
+    "email": "yusei1128@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/applest/node-applest-atem/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "async": "^1.3.0",
+    "pngjs": "^2.3.1"
+  },
+  "deprecated": false,
+  "description": "A module to control Blackmagic Design ATEM Switchers.",
+  "devDependencies": {
+    "chai": "3.1.0",
+    "coffee-script": "1.7.1",
+    "it-each": "^0.3.1",
+    "mocha": "2.2.5"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "homepage": "https://github.com/applest/node-applest-atem",
+  "keywords": [
+    "atem",
+    "blackmagic",
+    "bmd",
+    "switcher",
+    "video"
+  ],
+  "license": "MIT",
+  "main": "./lib/atem.js",
+  "name": "applest-atem",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/applest/node-applest-atem.git"
+  },
+  "scripts": {
+    "build": "coffee -bco lib src",
+    "prepublish": "npm run build",
+    "test": "cake test"
+  },
+  "version": "0.2.4"
+}

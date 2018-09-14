@@ -1,5 +1,6 @@
 // GLOBAL VAR
 var stepArray;
+var xhttp = new XMLHttpRequest();
 
 window.onload = function () {
     if (document.getElementsByClassName("red").length == 1) {
@@ -82,6 +83,24 @@ function testFunction(xml, macroIndex) {
 function openDetail(stepArrayIndex) {
     document.getElementById("detail").innerHTML = wrapDetail(stepArray[stepArrayIndex]);
 
+}
+
+function runMacro(element) {
+    if (document.getElementsByClassName("red").length == 1) {
+        var activeButton = document.getElementsByClassName("red");
+        activeButton[0].setAttribute('src', "img/button_yellow.png");
+        activeButton[0].className = activeButton[0].className.replace(" red", "");
+    }
+    element.className += " red";
+    element.setAttribute('src', "img/button_red.png");
+    var macroIndex = element.attributes[3].nodeValue;
+
+    runMacroExec(macroIndex);
+}
+
+function runMacroExec(index) {
+    xhttp.open("GET", "/callMacro/"+index, true);
+    xhttp.send();
 }
 
 function onClick(element) {
